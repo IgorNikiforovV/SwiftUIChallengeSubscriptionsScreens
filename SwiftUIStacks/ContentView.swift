@@ -59,9 +59,9 @@ struct ContentView: View {
                 }
                 .frame(height: 240)
                 .padding()
+                Spacer()
             }
         }
-        Spacer()
     }
 
     private func offsetY(_ icon: String?) -> CGFloat {
@@ -73,39 +73,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(plan: Plan.makePlan)
-    }
-}
-
-struct HeaderView: View {
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Choose")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .fontWeight(.black)
-                Text("Your Plan")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .fontWeight(.black)
-            }
-            Spacer()
-        }
-        .padding()
-    }
-}
-
-
-struct LabelView: View {
-    var label: String
-    var offsetY: CGFloat
-
-    var body: some View {
-        Text(label)
-            .font(.system(.caption, design: .rounded))
-            .fontWeight(.bold)
-            .foregroundColor(.white)
-            .padding(5)
-            .background(Color(red: 255/255, green: 183/255, blue: 37/255))
-            .cornerRadius(8)
-            .offset(x: 0, y: offsetY)
     }
 }
